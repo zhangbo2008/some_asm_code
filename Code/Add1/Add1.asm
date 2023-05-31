@@ -15,6 +15,8 @@
 .code
 
 start:
+
+
 	mov	ax, @data
 	mov	ds, ax           ;°Ñdata¸øds
 
