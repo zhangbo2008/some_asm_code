@@ -68,6 +68,32 @@ start:
 
 	; printint
 	; printintvar2
+	push di
+	push ax
+	mov  ax , offset data+3000h
+	mov     dl, al
+    MOV     AH,2
+    INT     21H
+	pop ax
+	pop di
+	push di
+	push ax
+	mov  ax , offset data+30h
+	mov     dl, al
+    MOV     AH,2
+    INT     21H
+	pop ax
+	pop di
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -81,7 +107,7 @@ start:
 
 	mov	ax, data
 	mov	ds, ax
-
+	mov al ,1111B
 	cmp	al, 0
 	je	continue_main_line  ; 等于0就直接continue了.
 	mov	si, 0
@@ -98,21 +124,55 @@ not_yet:
 continue_main_line:
 
 routine_1:
-		
+		push di
+	push ax
+	mov     dl, 1h+30h
+    MOV     AH,2
+    INT     21H
+	pop ax
+	pop di
 routine_2:
-
+push di
+		mov     dl, 2h+30h
+    MOV     AH,2
+    INT     21H
+	pop di
 routine_3:
-
+push di
+		mov     dl, 3h+30h
+    MOV     AH,2
+    INT     21H
+	pop di
 routine_4:
-
+push di
+		mov     dl, 4h+30h
+    MOV     AH,2
+    INT     21H
+	pop di
 routine_5:
-
+push di
+		mov     dl, 5h+30h
+    MOV     AH,2
+    INT     21H
+	pop di
 routine_6:
-
+push di
+		mov     dl, 6h+30h
+    MOV     AH,2
+    INT     21H
+	pop di
 routine_7:
-
+push di
+		mov     dl, 7h+30h
+    MOV     AH,2
+    INT     21H
+	pop di
 routine_8:
-
+push di
+		mov     dl, 8h+30h
+    MOV     AH,2
+    INT     21H
+	pop di
 	ret
 main endp
 

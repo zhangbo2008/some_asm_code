@@ -10,3 +10,79 @@
 	int指令表:
 
 		https://blog.csdn.net/guoyingming123/article/details/5581244
+
+
+
+打印小工具代码:
+想打印什么就把2h改成什么即可.然后把这个代码放到你想打印的位置.
+	push di
+	push ax
+	mov     dl, 2h+30h
+    MOV     AH,2
+    INT     21H
+	pop ax
+	pop di
+
+	具体使用还是有些复杂:下面写点例子:
+	1.打印al值.
+	push di
+	push ax
+	add ax , 30h
+	mov     dl, al
+    MOV     AH,2
+    INT     21H
+	pop ax
+	pop di
+	1.1打印ah值:
+	push di
+	push ax
+	add ax , 3000h
+	mov     dl, ah
+    MOV     AH,2
+    INT     21H
+	pop ax
+	pop di
+	1.2打印ax值.
+	push di
+	push ax
+	add ax , 30h
+	mov     dl, al
+    MOV     AH,2
+    INT     21H
+	pop ax
+	pop di
+	push di
+	push ax
+	add ax , 3000h
+	mov     dl, ah
+    MOV     AH,2
+    INT     21H
+	pop ax
+	pop di
+	2.打印bl值
+	push di
+	push ax
+	add bx , 30h
+	mov     dl, bl
+    MOV     AH,2
+    INT     21H
+	pop ax
+	pop di
+	3.打印cl值
+	push di
+	push ax
+	add cx , 30h
+	mov     dl, cl
+    MOV     AH,2
+    INT     21H
+	pop ax
+	pop di
+	4.打印offset data的低8位.
+	push di
+	push ax
+	mov  ax , offset data+30h
+	mov     dl, al
+    MOV     AH,2
+    INT     21H
+	pop ax
+	pop di
