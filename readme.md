@@ -4,3 +4,9 @@
 ;表示的含义是把data1的地址给si, [si]表示的是si的地址里面的数值. []就是c语言里面的根据地址取内容的意思.
 根据这个代码可以很好的学习汇编的语法规则.# some_asm_code
 # some_asm_code
+
+
+
+	int指令表:
+
+		https://blog.csdn.net/guoyingming123/article/details/5581244

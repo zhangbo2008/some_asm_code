@@ -60,7 +60,12 @@ printintvar2  MACRO
 
 code segment
 	assume cs:code, ds:data
+printfunc:
 
+	
+
+
+   ret  
 main proc far
 
 start:
@@ -68,6 +73,9 @@ start:
 
 	; printint
 	; printintvar2
+mov ax ,20
+push ax
+call printfunc
 
 
 
